@@ -58,7 +58,7 @@ Die Rangfolge zeigt die häufigsten Themen und nicht die dringendsten Probleme. 
 Der aktuelle Stand ist ein Prototyp. Folgende Erweiterungen und Korrekturen sind geplant:
 
 
-- **Text Preprocessing** muss hinsichtlich der Auswahl der Stopwörter und der Behandlung identischer Meldetexte geprüft werden.
+- **Text Preprocessing** muss hinsichtlich der Auswahl der Stopwörter geprüft werden.
 - **Modellvergleich** mit unterschiedlicher Anzahl von Topics für LDA und NMF. Die Auswahl berücksichtigt Kohärenzwerte (`c_v`) und die inhaltliche Interpretierbarkeit.
 - **Themenbezeichnungen und Ergebnisdarstellung** an den ausgewählten Modellstand anpassen.
 - **Installation und Nutzung** in einer neu erstellten Python-Umgebung testen.
