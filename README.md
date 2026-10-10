@@ -47,7 +47,7 @@ Die Dateien entstehen lokal unter `outputs/`.
 
 Die Themenübersicht für Entscheidungstragende und das Balkendiagramm sind zunächst deaktiviert, bis die Themenbezeichnungen für den neuen Modellstand geprüft sind.
 
-## Hinweise zur Interpretation
+
 
 ## Hinweise zur Interpretation
 
