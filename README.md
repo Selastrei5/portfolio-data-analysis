@@ -43,15 +43,22 @@ Die Dateien entstehen lokal unter `outputs/`.
 | CSV-Dateien für LDA und NMF | Technische Themenübersichten mit Häufigkeiten und wichtigen Begriffen |
 | CSV-Datei für Entscheidungstragende | NMF-Themenübersicht mit Rang, Beschwerdethema, Kurzbeschreibung, Anzahl, Anteil und beispielhaften Hinweisen |
 | PNG-Datei | Horizontales Balkendiagramm der Häufigkeiten je Thema |
+| `zuordnung_lda_nmf.csv` | Anzahl und Anteil der zugeordneten und nicht zugeordneten Meldungen für beide Verfahren |
+
+Die Themenübersicht für Entscheidungstragende und das Balkendiagramm sind zunächst deaktiviert, bis die Themenbezeichnungen für den neuen Modellstand geprüft sind.
 
 ## Hinweise zur Interpretation
 
-Die Rangfolge zeigt die häufigsten Themen, nicht die dringendsten Probleme. Die Prozentwerte beziehen sich auf die nach der Vorverarbeitung ausgewerteten Meldungen.
+## Hinweise zur Interpretation
+
+Die Rangfolge zeigt die häufigsten Themen und nicht die dringendsten Probleme. Die Prozentwerte beziehen sich auf alle Meldungen nach dem Preprocessing. Meldungen ohne Merkmale erhalten keine Topic-Zuordnung und werden separat ausgewiesen.
 
 ## Entwicklungsstand
 
 Der aktuelle Stand ist ein Prototyp. Folgende Erweiterungen und Korrekturen sind geplant:
 
+
+- **Text Preprocessing** muss hinsichtlich der Auswahl der Stopwörter und der Behandlung identischer Meldetexte geprüft werden.
 - **Modellvergleich** mit unterschiedlicher Anzahl von Topics für LDA und NMF. Die Auswahl berücksichtigt Kohärenzwerte (`c_v`) und die inhaltliche Interpretierbarkeit.
-- **Einheitliches Text Preprocessing** mit expliziter Behandlung fehlender und leerer Texte.
-- **Behandlung leerer Dokumentvektoren** als nicht zugeordnete Meldungen, statt diese automatisch einem Topic zuzuweisen.
+- **Themenbezeichnungen und Ergebnisdarstellung** an den ausgewählten Modellstand anpassen.
+- **Installation und Nutzung** in einer neu erstellten Python-Umgebung testen.
