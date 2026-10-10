@@ -50,9 +50,8 @@ Die Rangfolge zeigt die häufigsten Themen, nicht die dringendsten Probleme. Die
 
 ## Entwicklungsstand
 
-Der aktuelle Stand ist ein Prototyp. Folgende Erweiterungen und Korrekturen sind geplant.
+Der aktuelle Stand ist ein Prototyp. Folgende Erweiterungen und Korrekturen sind geplant:
 
 - **Modellvergleich** mit unterschiedlicher Anzahl von Topics für LDA und NMF. Die Auswahl berücksichtigt Kohärenzwerte (`c_v`) und die inhaltliche Interpretierbarkeit.
-- **Konfiguration** von Datenquelle, Textspalte, Stopwörtern und Modellparametern in einem gemeinsamen Abschnitt am Anfang des Notebooks.
 - **Einheitliches Text Preprocessing** mit expliziter Behandlung fehlender und leerer Texte.
 - **Behandlung leerer Dokumentvektoren** als nicht zugeordnete Meldungen, statt diese automatisch einem Topic zuzuweisen.
