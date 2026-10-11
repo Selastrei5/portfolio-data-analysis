@@ -9,6 +9,7 @@ Python-Projekt zur Analyse von unstrukturierten Beschwerden und Hinweisen von B�
 | **Data Profiling** | Analyse von Fehlwerten, Textduplikaten und der Verteilung der Textlängen mit `pandas` |
 | **Text Preprocessing** | Bereinigung mit regulären Ausdrücken, Normalisierung von Schreibvarianten und Begriffen, Tokenisierung und Stopwortfilterung mit `re` und `pandas` |
 | **Vektorisierung und Themenmodellierung** | `CountVectorizer` mit LDA sowie `TfidfVectorizer` mit NMF in `scikit-learn` |
+| **Vergleich der Stopwörter** | Vergleich von drei Varianten zur Filterung von Stopwörtern mit unterschiedlicher Behandlung von Zustandsbeschreibungen und Negationen, jeweils für LDA und NMF bei zehn Topics |
 | **Topic-Auswertung und Visualisierung** | Zuordnung zum dominanten Topic, Berechnung absoluter und relativer Häufigkeiten, CSV-Export und Balkendiagramm mit `NumPy`, `pandas` und `matplotlib` |
 
 ## Daten
@@ -58,7 +59,6 @@ Die Rangfolge zeigt die häufigsten Themen und nicht die dringendsten Probleme. 
 Der aktuelle Stand ist ein Prototyp. Folgende Erweiterungen und Korrekturen sind geplant:
 
 
-- **Text Preprocessing** muss hinsichtlich der Auswahl der Stopwörter geprüft werden.
 - **Modellvergleich** mit unterschiedlicher Anzahl von Topics für LDA und NMF. Die Auswahl berücksichtigt Kohärenzwerte (`c_v`) und die inhaltliche Interpretierbarkeit.
 - **Themenbezeichnungen und Ergebnisdarstellung** an den ausgewählten Modellstand anpassen.
 - **Installation und Nutzung** in einer neu erstellten Python-Umgebung testen.
