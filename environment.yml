@@ -239,5 +239,8 @@ dependencies:
   - zlib-ng=2.3.3
   - zstd=1.5.7
   - pip:
+      - gensim==4.4.0
       - scipy==1.17.1
+      - smart-open==8.0.2
+      - wrapt==2.5.0
 
