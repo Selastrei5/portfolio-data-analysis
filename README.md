@@ -74,6 +74,25 @@ Die Dateien der Analyse entstehen lokal unter `outputs/`. Das zweite Notebook sp
 
 Die kommunale Übersicht zeigt 1.658 von 2.759 Meldungen (60,1 %). Weitere 1.101 Meldungen (39,9 %) werden nicht nach Themen aufgeschlüsselt. 
 
+## Ergänzende Modellvergleiche (Schritte 11g–11l)
+
+Nach der ersten Modellauswahl wurden Textverarbeitung, Anzahl der Topics, Vektorisierung und Trainingseinstellungen gezielt verglichen. Zur Bewertung dienten die Kohärenz `c_v`, die Übereinstimmung mit den vorhandenen Meldekategorien (NMI, AMI, ARI und Reinheit) und die inhaltliche Prüfung ausgewählter Meldungen. Die direkten Kategorienvergleiche beziehen sich auf dieselben 2.651 Meldungen mit Topic-Zuordnung.
+
+| Schritt | Untersuchung | Ergebnis |
+|---|---|---|
+| 11g | Gemeinsame Stichprobe | LDA und NMF wurden an denselben 100 Meldungen gegenübergestellt. Die KI-gestützte Erstbewertung zeigte gemischte Topics und unpassende Zuordnungen. |
+| 11h | Textnormalisierung und Vokabularfilter | Die Meldetexte verwenden ae, oe und ue statt Umlauten. Die Normalisierung von Schreibweisen und Wortformen zusammen mit `min_df=2` reduziert die Anzahl der Meldungen ohne Merkmale von 108 auf 28. Das Absenken von `min_df` allein bringt keinen durchgängigen inhaltlichen Vorteil. |
+| 11i | Vergleich mit den Meldekategorien und Prüfung der Topic-Dominanz | Für NMF mit zwölf Topics steigt die NMI gegenüber den Hauptkategorien von 0,316 in der Referenz auf 0,333 bei der Kombination aus Normalisierung und `min_df=2`. LDA mit zehn Topics erreicht bei derselben Kombination 0,196. Die Dominanz des stärksten Topics wurde anhand der Schwellenwerte 0,4, 0,5 und 0,6 untersucht, ohne die bisherige Zuordnung oder Zählung der Meldungen zu ändern. |
+| 11j | Anzahl der NMF-Topics | Je Textvariante wurden 6, 8, 10, 12 und 15 Topics verglichen. Bei der Kombination erreicht NMF mit zehn Topics `c_v=0,447`, mit fünfzehn Topics `c_v=0,438`. Mit fünfzehn Topics entstehen zusätzliche Gruppen, unter anderem für Sperrmüll und abgemeldete Fahrzeuge. |
+| 11k | Count, TF-IDF und Initialisierung | Bei NMF mit fünfzehn Topics erreicht Count höhere Kohärenzwerte als TF-IDF (`c_v` im Mittel 0,545 gegenüber 0,438), enthält aber auch einzelne schwer interpretierbare Topics aus allgemeinen Formulierungen. Beide Varianten liefern über fünf Seeds stabile Gruppierungen. |
+| 11l | LDA-Trainingsumfang und Initialisierung | 100 statt 20 Iterationen verbessern die Kennzahlen nur geringfügig. Die Gruppierungen unterscheiden sich weiterhin deutlich zwischen den Seeds. Die paarweisen ARI-Werte liegen über die untersuchten Textvarianten und Trainingslimits hinweg zwischen 0,193 und 0,376. |
+
+Für die Ergebnisübersicht wurde **NMF mit TF-IDF, fünfzehn Topics, der untersuchten Textnormalisierung und `min_df=2`** ausgewählt.
+
+Count erreichte zwar bei mehreren Kennzahlen höhere Werte, mit TF-IDF ließen sich in der inhaltlichen Prüfung jedoch mehrere Themen klarer erkennen. Für den Vergleich wurden die Anliegen aus 50 Meldungen manuell zusammengefasst und die Zuordnungen beider Modelle anschließend mithilfe von KI beurteilt. Count und LDA bleiben als Vergleichsverfahren dokumentiert.
+
+Die Übernahme in die Hauptanalyse und die neue Beschriftung der Themen folgen im nächsten Schritt. Bis dahin beziehen sich die bisherigen Ausgaben der Ergebnisse und das Diagramm weiterhin auf die Referenz mit zwölf NMF-Topics.
+
 ## Hinweise zur Interpretation
 
 Die Rangfolge zeigt die Häufigkeiten der dargestellten Schwerpunkte und nicht die Dringlichkeit der Probleme in den Meldungen. Die Prozentwerte beziehen sich auf alle Meldungen nach dem Preprocessing. Die Häufigkeiten beruhen auf der automatischen Zuordnung, die Themenbezeichnungen auf der Prüfung ausgewählter Meldungen. Etwaige Meldungen ohne Merkmale erhalten keine Topic-Zuordnung und werden separat ausgewiesen.
