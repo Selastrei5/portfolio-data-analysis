@@ -1,0 +1,2 @@
+﻿Verfahren;Vektorisierung;Textvariante;Anzahl Topics;min_df;Seed;Eingelesene Meldungen;Meldungen im Arbeitsdatensatz;Nach Text Preprocessing;Durch Textfilter ausgeschlossen;Merkmale;Für das Modelltraining;Zugeordnet;Nicht zugeordnet;c_v Mittelwert;c_v Minimum;Iterationen;Dominanzfilter aktiv
+NMF;TF-IDF;Normalisierte Schreibweisen und Wortformen;15;2;42;2795;2795;2759;36;2460;2731;2731;28;0.4383298803477803;0.33274074239384877;51;False

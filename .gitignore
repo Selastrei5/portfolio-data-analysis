@@ -182,11 +182,12 @@ cython_debug/
 
 # Projektspezifische Ausschluesse
 
-# Rohdaten und verarbeitete Einzeldaten bleiben lokal
-/data/raw/
+# Nur die bereitgestellte bereinigte CSV versionieren
+/data/raw/*
+!/data/raw/maengelmelder_konstanz_final_9_bereinigt.csv
 /data/processed/
 
-# Erzeugte Ergebnisse bleiben bis zur Inhaltspruefung lokal
+# Automatisch erzeugte Arbeitsdateien bleiben lokal
 /outputs/
 
 # Lokale Sicherungen und Zwischenstaende
@@ -198,3 +199,13 @@ cython_debug/
 *.pdf
 *.docx
 *.zip
+
+# Unter ergebnisse/ nur die sieben geprüften Dateien veröffentlichen
+/ergebnisse/*
+!/ergebnisse/themenhaeufigkeiten_nmf.png
+!/ergebnisse/entscheidungstraeger_themenuebersicht.csv
+!/ergebnisse/nmf_topics_beschriftet.csv
+!/ergebnisse/umfang_themenuebersicht.csv
+!/ergebnisse/nicht_aufgeschluesselt_gruende.csv
+!/ergebnisse/vergleich_verfahren_zusammenfassung.csv
+!/ergebnisse/modellauswahl.csv

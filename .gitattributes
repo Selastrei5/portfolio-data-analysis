@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+data/raw/maengelmelder_konstanz_final_9_bereinigt.csv -text
