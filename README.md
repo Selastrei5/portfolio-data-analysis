@@ -78,7 +78,7 @@ Die Ergebnisübersicht verwendet **NMF mit TF-IDF und fünfzehn Topics**. Die Te
 
 Die Kohärenz `c_v` bewertet den Zusammenhang der wichtigsten Begriffe innerhalb eines Topics (Röder et al., 2015). Die Adjusted Mutual Information (AMI) vergleicht die Topic-Zuordnungen mit den Meldekategorien. Dabei berücksichtigt sie die zufällig zu erwartende Übereinstimmung (Vinh et al., 2010).
 
-Die Kategorienkennzahlen beziehen sich auf dieselben 2.731 Meldungen mit Topic-Zuordnung. Die NMF-Zeilen zeigen Seed 42. Bei LDA stehen Mittelwert und Standardabweichung über fünf Seeds bei jeweils 100 Iterationen. Die vollständigen Kennzahlen enthält die [Zusammenfassung des Verfahrensvergleichs](ergebnisse/vergleich_verfahren_zusammenfassung.csv).
+Die Kategorienkennzahlen beziehen sich auf dieselben 2.731 Meldungen mit Topic-Zuordnung. Die NMF-Zeilen zeigen Seed 42. Bei LDA stehen Mittelwert und Standardabweichung über fünf Seeds bei jeweils 100 Iterationen. Die Datei [vergleich_verfahren_zusammenfassung.csv](ergebnisse/vergleich_verfahren_zusammenfassung.csv) enthält die vollständigen Kennzahlen.
 
 Beide NMF-Varianten stimmen in diesem Vergleich stärker mit den Meldekategorien überein als LDA. Die Gruppierungen von LDA unterscheiden sich außerdem deutlich zwischen den Seeds (Schritt 11l). NMF mit Count erreicht die höhere Kohärenz und eine höhere AMI gegenüber den Hauptkategorien. Bei den Unterkategorien liegt dagegen NMF mit TF-IDF vorn (AMI 0,4061 zu 0,3952). Einzelne Count-Topics enthalten vorwiegend allgemeine Formulierungen wie „insbesondere“ oder „zudem“ und lassen keinen einheitlichen thematischen Schwerpunkt erkennen.
 
